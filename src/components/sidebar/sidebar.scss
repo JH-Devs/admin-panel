@@ -1,0 +1,89 @@
+.sidebar{
+    flex:1;
+    border-right: 0.5px solid var(--border);
+    min-height: 100vh;
+    background-color: white;
+   
+
+    .top{
+        height: 50px;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+
+        .logo{
+            font-size:20px;
+            color:var(--bg-light);
+        }
+    }
+    hr{
+        height: 0;
+        border: 0.5px solid var(--border);
+    }
+    .center{
+        padding-left: 10px;
+
+        ul{
+            margin:0;
+            padding: 0;
+
+            .title{
+                font-size: 10px;
+                font-weight: bold;
+                color:var(--bg-light);
+                margin-top:15px;
+                text-transform: uppercase;
+                margin-bottom: 5px;
+            }
+            li{
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                cursor:pointer;
+
+                .icon{
+                    font-size: 18px;
+                    color:var(--link-hover-color)
+                }
+               
+                span{
+                    margin-left:10px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color:var(--primary-color);
+                    
+
+                    &:hover{
+                        color:var(--link-hover-color);
+                    }
+                  
+                }
+            }
+        }
+    }
+    .bottom{
+        display:flex;
+        align-items: center;
+        margin:10px;
+
+        .colorOption{
+            width: 20px;
+            height:20px;
+            border-radius: 5px;
+            border: 1px solid var(--link-hover-color);
+            cursor: pointer;
+            margin:5px;
+
+            &:nth-child(1){
+                background-color:var(--bg-white);
+            }
+            &:nth-child(2){
+                background-color:var(--bg-black);
+            }
+            &:nth-child(3){
+                background-color:var(--bg-blue);
+            }
+           
+        }
+    }
+}
