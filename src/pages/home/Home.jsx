@@ -21,10 +21,10 @@ const Home = () => {
             </div>
             <div className="charts">
               <Featured />
-              <Chart />
+              <Chart title='Prodeje' aspect={ 2 / 1 }/>
             </div>
             <div className="listContainer">
-              <div className="listTitle">Nejnovější transakce</div>
+              <div className="listTitle">Nejnovější objednávky</div>
               <Table />
               
             </div>

@@ -14,11 +14,15 @@ import StoreIcon from '@mui/icons-material/Store';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
+import { NavLink } from 'react-router-dom';
 
 const SideBar = () => {
+
+   // const logout = () => {}
+
   return (
     <div className='sidebar'>
-        <div className='top'>
+        <div className='top' >
             <span className='logo'>Admin panel</span>
         </div>
         <hr/>
@@ -27,59 +31,59 @@ const SideBar = () => {
                 <p className='title'>Hlavní menu</p>
                 <li>
                     < DashboardIcon className='icon' />
-                    <span>Nástěnka</span>
+                    <span><NavLink to='/'className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Nástěnka</NavLink></span>
                 </li>
                 <p className='title'>Seznamy</p>
                 <li>
                     <PeopleIcon className='icon' />
-                    <span>Uživatelé</span>
+                    <span><NavLink to='/uzivatele' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Uživatelé</NavLink></span>
                 </li>
                 <li>
                     <StoreIcon className='icon' />
-                    <span>Produkty</span>
+                    <span><NavLink to='/produkty' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Produkty</NavLink></span>
                 </li>
                 <li>
                     <CategoryIcon className='icon' />
-                    <span>Kategorie</span>
+                    <span><NavLink to='/kategorie' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Kategorie</NavLink></span>
                 </li>
                 <li>
                     <ListAltIcon className='icon' />
-                    <span>Objednávky</span>
+                    <span><NavLink to='/objednavky' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Objednávky</NavLink></span>
                 </li>
                 <li>
                     <LocalShippingIcon className='icon' />
-                    <span>Doprava</span>
+                    <span><NavLink to='/doprava' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Doprava</NavLink></span>
                 </li>
                 <li>
                     <PaymentsIcon className='icon' />
-                    <span>Platba</span>
+                    <span><NavLink to='/platba' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Platba</NavLink></span>
                 </li>
                 <p className='title'>Ostatní odkazy</p>
                 <li>
                     <EqualizerIcon className='icon' />
-                    <span>Statistiky</span>
+                    <span><NavLink to='/statistiky' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Statistiky</NavLink></span>
                 </li>
                 <li>
                     <NotificationsActiveIcon className='icon' />
-                    <span>Upozornění</span>
+                    <span><NavLink to='/upozorneni' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Upozornění</NavLink></span>
                 </li>
                 <p className='title'>Servis</p>
                 <li>
                     <HealthAndSafetyIcon className='icon'/>
-                    <span>System Health</span>
+                    <span><NavLink to='/system' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>System Health</NavLink></span>
                 </li>
                 <li>
                     <LoginIcon className='icon'/>
-                    <span>Přihlašování</span>
+                    <span><NavLink to='/prihlasovani' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Přihlašování</NavLink></span>
                 </li>
                 <li>
                     <SettingsIcon className='icon'/>
-                    <span>Nastavení</span>
+                    <span><NavLink to='/nastaveni' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Nastavení</NavLink></span>
                 </li>
                 <p className='title'>Uživatel</p>
                 <li>
                     <Person2Icon className='icon'/>
-                    <span>Profil</span>
+                    <span><NavLink to='profil' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Profil</NavLink></span>
                 </li>
                 <li>
                     <LogoutIcon className='icon'/>

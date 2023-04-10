@@ -4,6 +4,11 @@
     box-shadow: var(--box-shadow);
     padding: 10px;
 
+    .title{
+        color: var(--text-color);
+        margin-bottom:20px ;
+    }
+
     .chartGrid{
         stroke: lightgray;
     }

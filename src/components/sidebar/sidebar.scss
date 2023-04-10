@@ -3,6 +3,7 @@
     border-right: 0.5px solid var(--border);
     min-height: 100vh;
     background-color: white;
+    
    
 
     .top{
@@ -10,6 +11,7 @@
         display:flex;
         align-items:center;
         justify-content: center;
+   
 
         .logo{
             font-size:20px;
@@ -22,11 +24,12 @@
     }
     .center{
         padding-left: 10px;
+        
 
         ul{
             margin:0;
             padding: 0;
-
+         
             .title{
                 font-size: 10px;
                 font-weight: bold;
@@ -45,12 +48,19 @@
                     font-size: 18px;
                     color:var(--link-hover-color)
                 }
-               
-                span{
+               span{
+                
+                .nav__active{
+                    color:var(--link-hover-color);
+                    font-weight: 600;
+                }
+               }
+                span a{
                     margin-left:10px;
                     font-size: 14px;
                     font-weight: 400;
                     color:var(--primary-color);
+                    
                     
 
                     &:hover{

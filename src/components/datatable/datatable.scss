@@ -1,0 +1,62 @@
+.datatable{
+    height: 600px;
+    padding: 20px;
+
+    .cellWithImg{
+        display: flex;
+        align-items: center;
+
+        .cellImg{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+    .cellWithStatus{
+        padding: 5px;
+
+        &.aktivní{
+            color:green;
+        }
+        &.neaktivní{
+            color:red;
+        }
+    }
+    .cellWithRole{
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 12px;
+
+        &.Zákazník{
+            background-color: var(--bg-01); 
+        }
+        &.Host{
+            background-color: var(--bg-03);
+        }
+    }
+    .cellAction{
+        display: flex;
+        align-items: center;
+        gap:20px;
+
+        .viewButton .icon{
+            color: var(--view-button);
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .editButton .icon{
+            color: var(--edit-button);
+            height: 18px;
+            cursor: pointer;
+            
+        }
+        .deleteButton .icon{
+            color: red;
+            height: 18px;
+            cursor: pointer;
+            
+        }
+    }
+}
