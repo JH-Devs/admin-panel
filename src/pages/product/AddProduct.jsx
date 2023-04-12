@@ -1,4 +1,4 @@
-import React, {useState, Component} from 'react'
+import React, {useState} from 'react'
 import SideBar from '../../components/sidebar/SideBar'
 import Navbar from '../../components/navbar/Navbar'
 import './addProduct.scss'
@@ -90,7 +90,7 @@ const Addproduct = () => {
               <label>Klíčová slova</label>
               <input type='text' />
             </div>
-            <button className='user__btn'>vytvořit</button>
+            <button type='submit' className='user__btn'>vytvořit</button>
           </form>
         </div>
       </div>

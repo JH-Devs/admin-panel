@@ -14,10 +14,13 @@ import ListDelivery from './pages/list/ListDelivery';
 import ListPayments from './pages/list/ListPayments';
 import ListUsers from './pages/list/ListUsers';
 import ListDocs from './pages/list/ListDocs';
+import Footer from './components/footer/Footer';
+import EditProduct from './pages/product/EditProduct'
+
 
 function App() {
   return (
-    <>
+    <div className='app '>
     <Routes>
       <Route path='/'/>
       <Route index element={<Home />} />
@@ -25,11 +28,13 @@ function App() {
       <Route path='uzivatele'>
         <Route index element={<ListUsers />} />
         <Route path=':userId' element={<Single />} />
+        <Route path=':userId/upravit' element={<Single />} />
         <Route path='pridat' element={<New inputs ={userInputs} title='Přidat uživatele' />} />
       </Route>
       <Route path='produkty'>
         <Route index element={<ListProducts />} />
-        <Route path=':productId' element={<Single />} />
+        <Route path=':id' element={<Single />} />
+        <Route path=':id/upravit' element={<EditProduct />} />
         <Route path='pridat' element={<Addproduct/>} />
       </Route>
       <Route path='kategorie'>
@@ -57,7 +62,8 @@ function App() {
         <Route path='pridat' element={<AddDocument />} />
       </Route>
     </Routes>
-    </>
+    <Footer />
+    </div>
   );
 }
 

@@ -43,15 +43,12 @@ const AddDocument = () => {
               <label>Klíčová slova</label>
               <input type='text' />
             </div>
-            <button className='user__btn'>vytvořit</button>
+            <button type='submit' className='user__btn'>vytvořit</button>
           </form>
         </div>
       </div>
     </div> 
-  
-      <div className="haha">
     
-    </div>   
   </div>
 
  

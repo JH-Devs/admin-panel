@@ -41,7 +41,7 @@ const New = ({inputs, title}) => {
                  />
                  <input type="textarea" />
               </div>
-              <button className='user__btn'>vytvořit</button>
+              <button type='submit' className='user__btn'>vytvořit</button>
             </form>
           </div>
         </div>

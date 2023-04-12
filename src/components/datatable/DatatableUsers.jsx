@@ -5,9 +5,11 @@ import {userColumns, userRows} from '../../datatablesource'
 import EditIcon from '@mui/icons-material/Edit';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { NavLink } from 'react-router-dom';
 
 
 const DatatableUsers = () => {
+
     const actionColumn = [
         {
             field: 'actions',
@@ -16,8 +18,8 @@ const DatatableUsers = () => {
             renderCell: () => {
                 return (
                     <div className='cellAction'>
-                        <div className='viewButton' ><RemoveRedEyeIcon className='icon' /></div>
-                        <div className='editButton' ><EditIcon className='icon' /></div>
+                        <div className='viewButton' ><NavLink to='/uzivatele/test'><RemoveRedEyeIcon className='icon' /></NavLink></div>
+                        <div className='editButton' ><NavLink to='/uzivatele/:id/upravit'><EditIcon className='icon' /></NavLink></div>
                         <div className='deleteButton'><DeleteIcon className='icon'/></div>
                     </div>
                 )
