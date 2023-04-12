@@ -10,7 +10,7 @@ const Login = () => {
     <Helmet title='Přihlášení'>
     <section className='login__section'>
       <Container className='login'>
-        <Row>
+        <Row >
             <Col lg='6' className='m-auto text-center'>
             <h3 className='fw-bold fmb-4'>Přihlášení</h3>
             <Form className="auth__form" >
@@ -20,8 +20,9 @@ const Login = () => {
               <FormGroup>
                 <input type="password" placeholder='heslo' required/>
               </FormGroup>
-              <motion.button type='submit' whileTap={{scale:1.2}} className="buy__btn auth__btn"> přihlásit</motion.button>
+              <motion.button type='submit' whileTap={{scale:1.2}} className="auth__btn"> přihlásit</motion.button>
               <p>Zapomenuté heslo? <Link to='/registrace'>Obnovení hesla</Link></p>
+              <span>Nesprávná kombinace emailu nebo hesla!</span>
             </Form>
           </Col>
         </Row>

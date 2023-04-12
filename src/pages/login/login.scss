@@ -1,3 +1,51 @@
 .login{
     height: 100vh;
+    width:100%;
+
+    h3{
+      margin-top:100px;  
+      margin-bottom:25px;
+      color:var(--link-hover-color);
+      letter-spacing:1.5px;
+    }
+    .auth__form{
+        -webkit-box-shadow:var(--web-kit);
+        box-shadow: var(--box-shadow);
+        padding: 20px;
+        background-color: white;
+
+        input{
+            width:100%;
+            height:30px;
+            margin-top:20px;
+            border:none;
+            border-bottom:1px solid gray;
+
+            &::placeholder{
+                text-align:center;
+            }
+        }
+        .auth__btn{
+            border:none;
+            padding:5px 15px;
+            border-radius:5px;
+            background-color:var(--link-hover-color);
+            color:white;
+            margin-bottom:25px;
+            margin-top:20px;
+            cursor:pointer;
+        }
+        p{
+            color:gray;
+
+            a{
+                text-decoration:none;
+                color:var(--link-hover-color);
+            }
+        }
+        span{
+            color:red;
+            font-size:12px;
+        }
+    }
 }
