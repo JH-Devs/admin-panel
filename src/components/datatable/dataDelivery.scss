@@ -1,38 +1,18 @@
-.datatable{
+.datatableDelivery{
     height: 100vh;
     padding: 20px;
 
     .cellWithImg{
         display: flex;
         align-items: center;
+        justify-content: center;
+        line-height: 60px;
+        
 
         .cellImg{
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
+            width: 200px;
+            height: 40px;
             object-fit: cover;
-        }
-    }
-    .cellWithStatus{
-        padding: 5px;
-
-        &.aktivní{
-            color:green;
-        }
-        &.neaktivní{
-            color:red;
-        }
-    }
-    .cellWithRole{
-        padding: 5px;
-        border-radius: 5px;
-        font-size: 12px;
-
-        &.Zákazník{
-            background-color: var(--bg-01); 
-        }
-        &.Host{
-            background-color: var(--bg-03);
         }
     }
     .cellAction{

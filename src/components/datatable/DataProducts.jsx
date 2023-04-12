@@ -1,13 +1,12 @@
 import React from 'react'
-import './datatable.scss'
+import './dataProducts.scss'
 import { DataGrid, 	csCZ } from '@mui/x-data-grid';
-import {userColumns, userRows} from '../../datatablesource'
+import {productColumns, productRows} from '../../datatablesource'
 import EditIcon from '@mui/icons-material/Edit';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-
-const Datatable = () => {
+const DataProducts = () => {
     const actionColumn = [
         {
             field: 'actions',
@@ -25,10 +24,10 @@ const Datatable = () => {
         }
     ];
   return (
-    <div className='datatable'>
+    <div className='datatableProduct'>
         <DataGrid localeText={csCZ.components.MuiDataGrid.defaultProps.localeText}
-            rows={userRows}
-            columns={userColumns.concat(actionColumn)} 
+            rows={productRows}
+            columns={productColumns.concat(actionColumn)} 
             pageSize={9}
             rowsPerPageOptions={[9]}
             checkboxSelection
@@ -37,4 +36,4 @@ const Datatable = () => {
   )
 }
 
-export default Datatable
+export default DataProducts

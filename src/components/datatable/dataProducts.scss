@@ -1,40 +1,64 @@
-.datatable{
+.datatableProduct{
     height: 100vh;
     padding: 20px;
+    
 
     .cellWithImg{
         display: flex;
         align-items: center;
 
         .cellImg{
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
+            width: 40px;
+            height: 40px;
             object-fit: cover;
+        }
+    }
+    .cellWithStock{
+        padding: 5px;
+
+        &.skladem{
+            color:green;
+        }
+        &.u{
+            color:orange;
+        }
+        &.vyprodáno{
+            color:red;
+        }
+    }
+    .cellWithPayment {
+        padding: 5px;
+
+        &.bankovní{
+            color:orange;
+        }
+        &.dobírka{
+            color:red;
+        }
+        &.online{
+            color:green;
+        }
+        &.paypal{
+            color:blue;
         }
     }
     .cellWithStatus{
         padding: 5px;
+        &.zpracovává{
+            color:orange;
 
-        &.aktivní{
-            color:green;
         }
-        &.neaktivní{
+        &.storno{
             color:red;
         }
-    }
-    .cellWithRole{
-        padding: 5px;
-        border-radius: 5px;
-        font-size: 12px;
-
-        &.Zákazník{
-            background-color: var(--bg-01); 
+        &.vyřízeno{
+            color:green;
         }
-        &.Host{
-            background-color: var(--bg-03);
+        &.odesláno{
+            color:blue;
         }
     }
+    
     .cellAction{
         display: flex;
         align-items: center;

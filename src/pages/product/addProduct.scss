@@ -1,0 +1,93 @@
+.product{
+    width: 100%;
+    display: flex;
+
+    .productContainer{
+        flex:6;
+    }
+    .top, .bottom{
+        -webkit-box-shadow:var(--web-kit);
+        box-shadow: var(--box-shadow);
+        padding: 10px;
+        margin-top: 20px;
+        display: flex;
+
+        .title{
+            color:var(--link-hover-color);
+                font-size: 25px; color:var(--link-hover-color);
+        }
+        .left{
+            flex:2;
+            text-align: center;
+            justify-content: center;
+
+            img{
+                width: 200px;
+                height: 200px;
+                border-radius: 5px;
+                object-fit: cover;
+                margin-top: auto;
+            }
+            .subImg{
+                margin-top: 10%;
+                display: flex;
+                grid-template-columns: repeat(2,1fr);
+                align-items: center;
+                
+                img{
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 5px;
+                    object-fit: cover;
+                    margin:10px;
+                }
+            }
+        }
+        .right{
+            flex:2;
+
+            form{
+                display: flex;
+                flex-direction: column;
+                gap:30px;
+                justify-content: center;
+
+                .formGroup{
+                    width: 80%;
+
+                    label{
+                        display: flex;
+                        align-items: center;
+                        gap:10px;
+                        margin-bottom: 10px;
+                    
+                    }
+                    input, select{
+                        width: 100%;
+                        line-height:auto;
+                        padding: 5px;
+                        border: none;
+                        border-bottom: 1px solid gray;
+                    }
+                    .editor__product{
+                        width: 100%;
+
+                    }
+
+                }
+              
+                .user__btn{
+                    width: 80%;
+                    padding: 5px;
+                    font-size: 16px;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    background-color: var(--link-hover-color);
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

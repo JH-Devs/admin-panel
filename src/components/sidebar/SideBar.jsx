@@ -15,6 +15,7 @@ import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import { NavLink } from 'react-router-dom';
+import PlagiarismIcon from '@mui/icons-material/Plagiarism';
 
 const SideBar = () => {
 
@@ -57,6 +58,10 @@ const SideBar = () => {
                 <li>
                     <PaymentsIcon className='icon' />
                     <span><NavLink to='/platba' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Platba</NavLink></span>
+                </li>
+                <li>
+                    <PlagiarismIcon className='icon' />
+                    <span><NavLink to='/dokumenty' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Dokumenty</NavLink></span>
                 </li>
                 <p className='title'>Ostatní odkazy</p>
                 <li>
