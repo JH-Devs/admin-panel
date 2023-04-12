@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Helmet from '../../components/helmet/Helmet'
 import './login.scss'
 import { Link } from 'react-router-dom'
@@ -6,6 +6,12 @@ import {Container, Row, Col, Form, FormGroup} from 'reactstrap'
 import { motion } from 'framer-motion'
 
 const Login = () => {
+  const [error, setError] = useState(false);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+  }
+
   return (
     <Helmet title='Přihlášení'>
     <section className='login__section'>
@@ -13,7 +19,7 @@ const Login = () => {
         <Row >
             <Col lg='6' className='m-auto text-center'>
             <h3 className='fw-bold fmb-4'>Přihlášení</h3>
-            <Form className="auth__form" >
+            <Form className="auth__form" onSubmit={handleLogin} >
               <FormGroup>
                 <input type="email" placeholder='emailová adresa'  required />
               </FormGroup>
@@ -22,7 +28,7 @@ const Login = () => {
               </FormGroup>
               <motion.button type='submit' whileTap={{scale:1.2}} className="auth__btn"> přihlásit</motion.button>
               <p>Zapomenuté heslo? <Link to='/registrace'>Obnovení hesla</Link></p>
-              <span>Nesprávná kombinace emailu nebo hesla!</span>
+              {error && <span>Nesprávná kombinace emailu nebo hesla!</span>}
             </Form>
           </Col>
         </Row>

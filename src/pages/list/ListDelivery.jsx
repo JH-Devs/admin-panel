@@ -4,9 +4,11 @@ import Sidebar from '../../components/sidebar/SideBar'
 import Navbar from '../../components/navbar/Navbar'
 import DataDelivery from '../../components/datatable/DataDelivery'
 import { NavLink } from 'react-router-dom'
+import Helmet from '../../components/helmet/Helmet'
 
 const ListDelivery = () => {
   return (
+    <Helmet title='Dopravci'>
     <div className='list'>
       <Sidebar />
       <div className="listContainer">
@@ -17,6 +19,7 @@ const ListDelivery = () => {
         <DataDelivery />
       </div>
     </div>
+    </Helmet>
   )
 }
 
