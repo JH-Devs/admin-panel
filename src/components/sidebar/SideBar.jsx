@@ -38,6 +38,7 @@ const SideBar = () => {
                 <li>
                     <PeopleIcon className='icon' />
                     <span><NavLink to='/uzivatele' className={(navClass) => navClass.isActive ? 'nav__active' : ''}>Uživatelé</NavLink></span>
+                    
                 </li>
                 <li>
                     <StoreIcon className='icon' />
