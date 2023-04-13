@@ -14,19 +14,32 @@ import StoreIcon from '@mui/icons-material/Store';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import PlagiarismIcon from '@mui/icons-material/Plagiarism';
+import {auth} from '../../firebase'
+import {  signOut } from "firebase/auth";
+
+
 
 const SideBar = () => {
 
-   // const logout = () => {}
+    const navigate = useNavigate();
+
+
+   const logout = () => {
+    signOut(auth).then(() => {
+      navigate('/prihlaseni')
+    }).catch(err=> {
+      
+    })
+  }
 
   return (
     <div className='sidebar'>
         <div className='top' >
             <span className='logo'>Admin panel</span>
         </div>
-        <hr/>
+        
         <div className='center'>
             <ul>
                 <p className='title'>Hlavní menu</p>
@@ -93,7 +106,7 @@ const SideBar = () => {
                 </li>
                 <li>
                     <LogoutIcon className='icon'/>
-                    <span>odhlásit se</span>
+                    <span onClick={logout} >odhlásit se</span>
                 </li>
             </ul>
         </div>

@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from 'react-router';
+import { Routes, Route, Navigate } from 'react-router';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Single from './pages/single/Single';
@@ -16,50 +16,153 @@ import ListUsers from './pages/list/ListUsers';
 import ListDocs from './pages/list/ListDocs';
 import Footer from './components/footer/Footer';
 import EditProduct from './pages/product/EditProduct'
+import { useContext } from 'react';
+import { AuthContext } from './context/AuthContext';
 
 
 function App() {
+
+  const {currentUser} = useContext(AuthContext);
+
+  const RequireAuth = ({children}) => {
+    return currentUser ? children : <Navigate to='/prihlaseni' />
+  }
+
   return (
     <div className='app '>
     <Routes>
       <Route path='/'/>
-      <Route index element={<Home />} />
       <Route path='prihlaseni' element={<Login />} />
+      <Route 
+        index 
+        element={
+        <RequireAuth>
+          <Home />
+        </RequireAuth>
+        } />
       <Route path='uzivatele'>
-        <Route index element={<ListUsers />} />
-        <Route path=':userId' element={<Single />} />
-        <Route path=':userId/upravit' element={<Single />} />
-        <Route path='pridat' element={<New inputs ={userInputs} title='Přidat uživatele' />} />
+        <Route index element={
+          <RequireAuth>
+            <ListUsers />
+        </RequireAuth>
+        } />
+        <Route path=':userId' element={
+          <RequireAuth>
+            <Single />
+        </RequireAuth>
+        } />
+        <Route path=':userId/upravit' element={
+          <RequireAuth>
+            <Single />
+        </RequireAuth>
+        } />
+        <Route path='pridat' element={
+          <RequireAuth>
+        <New inputs ={userInputs} title='Přidat uživatele' />
+        </RequireAuth>
+        } />
       </Route>
       <Route path='produkty'>
-        <Route index element={<ListProducts />} />
-        <Route path=':id' element={<Single />} />
-        <Route path=':id/upravit' element={<EditProduct />} />
-        <Route path='pridat' element={<Addproduct/>} />
+        <Route index element={
+          <RequireAuth>
+        <ListProducts />
+        </RequireAuth>
+        } />
+        <Route path=':id' element={
+          <RequireAuth>
+            <Single />
+        </RequireAuth>
+        } />
+        <Route path=':id/upravit' element={
+          <RequireAuth>
+            <EditProduct />
+        </RequireAuth>
+        } />
+        <Route path='pridat' element={
+          <RequireAuth>
+        <Addproduct/>
+        </RequireAuth>
+        } />
       </Route>
       <Route path='kategorie'>
-        <Route index element={<ListCategories />} />
-        <Route path=':categoryId' element={<Single />} />
-        <Route path='pridat'element={<New inputs = {categoryInputs} title='Přidat kategorii'/>} />
+        <Route index element={
+          <RequireAuth>
+            <ListCategories />
+        </RequireAuth>
+        } />
+        <Route path=':categoryId' element={
+          <RequireAuth>
+        <Single />
+        </RequireAuth>
+        } />
+        <Route path='pridat'element={
+          <RequireAuth>
+        <New inputs = {categoryInputs} title='Přidat kategorii'/>
+        </RequireAuth>
+        } />
       </Route>
       <Route path='objednavky'>
-        <Route index element={<ListOrders />} />
-        <Route path=':orderId' element={<Single />} />
+        <Route index element={
+          <RequireAuth>
+            <ListOrders />
+        </RequireAuth>
+        } />
+        <Route path=':orderId' element={
+          <RequireAuth>
+            <Single />
+        </RequireAuth>
+        } />
       </Route>
       <Route path='doprava'>
-      <Route index element={<ListDelivery />} />
-        <Route path=':deliveryId' element={<Single />} />
-        <Route path='pridat' element={<New inputs = {deliveryInputs} title='Přidat dopravce'/>} />
+      <Route index element={
+        <RequireAuth>
+          <ListDelivery />
+      </RequireAuth>
+      } />
+        <Route path=':deliveryId' element={
+          <RequireAuth>
+            <Single />
+        </RequireAuth>
+        } />
+        <Route path='pridat' element={
+          <RequireAuth>
+            <New inputs = {deliveryInputs} title='Přidat dopravce'/>
+        </RequireAuth>
+        } />
       </Route>
       <Route path='platba'>
-      <Route index element={<ListPayments />} />
-        <Route path=':paymentId' element={<Single />} />
-        <Route path='pridat' element={<New inputs = {paymentInputs} title='Přidat platbu'/>} />
+      <Route index element={
+        <RequireAuth>
+          <ListPayments />
+      </RequireAuth>
+      } />
+        <Route path=':paymentId' element={
+          <RequireAuth>
+            <Single />
+        </RequireAuth>
+        } />
+        <Route path='pridat' element={
+          <RequireAuth>
+            <New inputs = {paymentInputs} title='Přidat platbu'/>
+        </RequireAuth>
+        } />
       </Route>
       <Route path='dokumenty'>
-      <Route index element={<ListDocs />} />
-        <Route path=':documentId' element={<Single />} />
-        <Route path='pridat' element={<AddDocument />} />
+      <Route index element={
+        <RequireAuth>
+      <ListDocs />
+      </RequireAuth>
+      } />
+        <Route path=':documentId' element={
+          <RequireAuth>
+        <Single />
+        </RequireAuth>
+        } />
+        <Route path='pridat' element={
+          <RequireAuth>
+        <AddDocument />
+        </RequireAuth>
+        } />
       </Route>
     </Routes>
     <Footer />
