@@ -4,10 +4,18 @@ import Navbar from '../../components/navbar/Navbar'
 import './addDocument.scss'
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import { doc, setDoc } from "firebase/firestore"; 
+import { db } from '../../firebase';
 
 
 const AddDocument = () => {
     const [file, setFile] = useState('');
+
+      
+  const handleAdd =async(e) => {
+    e.preventDefault()
+
+  }
 
   return (
     <div className='document'>
@@ -22,7 +30,7 @@ const AddDocument = () => {
           <img src={file ? URL.createObjectURL(file) : 'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg'} alt="" />
         </div>
         <div className="right">
-          <form >   
+          <form onSubmit={handleAdd}>   
             <div className="formGroup" >
               <label>Název</label>
               <input type='text' />

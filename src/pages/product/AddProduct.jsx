@@ -1,8 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, Component} from 'react'
 import SideBar from '../../components/sidebar/SideBar'
 import Navbar from '../../components/navbar/Navbar'
 import './addProduct.scss'
 import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
+import { doc, setDoc } from "firebase/firestore"; 
+import { db } from '../../firebase';
 
 
 
@@ -14,7 +17,16 @@ const Addproduct = () => {
     const [file3, setFile3] = useState('');
     const [file4, setFile4] = useState('');
 
-    const EditorComoponent = () => <Editor />
+    const EditorComponent = () => <Editor />
+
+
+      
+  const handleAdd =async(e) => {
+    e.preventDefault()
+   
+ 
+  }
+
   return (
     <div className='product'>
     <SideBar />
@@ -34,7 +46,7 @@ const Addproduct = () => {
          </div>
         </div>
         <div className="right">
-          <form >   
+          <form onSubmit={handleAdd}>   
             <div className="formGroup" >
               <label>Název</label>
               <input type='text' />

@@ -1,41 +1,41 @@
 export const userInputs = [
     {
-        id:1,
+        id:'firstName',
         label: 'Jméno',
         type:'text',
     },
     {
-        id:2,
+        id:'lastName',
         label: 'Příjmení',
         type:'text',
     },
     {
-        id:3,
+        id:'email',
         label: 'Email',
         type:'email',
     },
     {
-        id:4,
+        id:'phone',
         label: 'Telefon',
         type:'number',
     },
     {
-        id:5,
+        id:'password',
         label: 'Heslo',
         type:'password',
     },
     {
-        id:6,
+        id:'address',
         label: 'Adresa',
         type:'text',
     },
     {
-        id:6,
+        id:'country',
         label: 'Země',
         type:'text',
     },
     {
-        id:6,
+        id:'role',
         label: 'Role',
         type:'text',
     },
