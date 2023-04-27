@@ -5,14 +5,54 @@ import Navbar from '../../components/navbar/Navbar'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { addDoc, doc, setDoc,collection,serverTimestamp, Timestamp } from "firebase/firestore"; 
 import { useState } from 'react';
-import { auth,db } from '../../firebase';
+import { auth,db, storage } from '../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { motion } from 'framer-motion';
+import { ref, uploadBytesResumable,getDownloadURL } from 'firebase/storage';
+import { useEffect } from 'react';
 
 const New = ({inputs, title}) => {
   const [file, setFile] = useState('');
   const [data, setData] = useState({});
 
+  useEffect(() => {
+    const uploadFile = () => {
+      const name = new Date().getTime() + file.name;
+
+      console.log(name);
+      const storageRef = ref(storage, file.name);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+          
+          switch (snapshot.state) {
+            case "paused":
+              console.log("Upload is paused");
+              break;
+            case "running":
+              console.log("Upload is running");
+              break;
+            default:
+              break;
+          }
+        },
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            setData((prev) => ({ ...prev, img: downloadURL }));
+          });
+        }
+      );
+    };
+    file && uploadFile();
+  }, [file]);
 
   const handleInput = (e) => {
     const id = e.target.id;
@@ -20,7 +60,6 @@ const New = ({inputs, title}) => {
 
     setData({ ...data, [id]: value});
   };
-  console.log(data)
  
   const handleAdd =async(e) => {
     e.preventDefault();
